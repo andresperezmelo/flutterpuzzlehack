@@ -1,13 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:puzzleapp/firebase_options.dart';
 import 'package:puzzleapp/home/traduction_home.dart';
-import 'firebase_options.dart';
 import 'package:puzzleapp/login/login.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
-  await WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

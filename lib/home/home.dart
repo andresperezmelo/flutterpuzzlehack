@@ -55,7 +55,7 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
 
   @override
   void initState() {
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
 
     if (kIsWeb) {
       /*
@@ -107,6 +107,8 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
       case AppLifecycleState.detached:
         //print("detached");
         break;
+      case ui.AppLifecycleState.hidden:
+      // TODO: Handle this case.
     }
     super.didChangeAppLifecycleState(state);
   }
@@ -606,7 +608,6 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
                     icon: Icon(Icons.refresh),
                     label: Text("${_traductionHome.translate("refrescar")}"),
                     style: TextButton.styleFrom(
-                      primary: Colors.white,
                       padding: EdgeInsets.all(10),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
@@ -636,7 +637,6 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
                       ],
                     ),
                     style: TextButton.styleFrom(
-                      primary: Colors.white,
                       padding: EdgeInsets.all(10),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
@@ -658,7 +658,6 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
                     icon: Icon(Icons.image),
                     label: Text("${_traductionHome.translate("imagenes")}"),
                     style: TextButton.styleFrom(
-                      primary: Colors.white,
                       padding: EdgeInsets.all(10),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
@@ -698,7 +697,6 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
                                     Navigator.pop(context);
                                   },
                                   style: ElevatedButton.styleFrom(
-                                    primary: Colors.white,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(15),
                                     ),
@@ -710,7 +708,6 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
                                     Navigator.of(context).pop();
                                   },
                                   style: ElevatedButton.styleFrom(
-                                    primary: Colors.white,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(15),
                                     ),
@@ -725,7 +722,6 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
                     icon: Icon(Icons.exit_to_app),
                     label: Text("Retire"),
                     style: TextButton.styleFrom(
-                      primary: Colors.redAccent,
                       padding: EdgeInsets.all(10),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
@@ -1089,7 +1085,6 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
                             style: TextStyle(color: Colors.white),
                           ),
                           style: ElevatedButton.styleFrom(
-                            primary: ValStatics.colorSecondary,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20.0),
                             ),
@@ -1390,7 +1385,6 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
                       Navigator.pop(context);
                     },
                     style: TextButton.styleFrom(
-                      primary: ValStatics.colorPrimary,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                     ),
@@ -1402,7 +1396,6 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
                       Navigator.pop(context);
                     },
                     style: TextButton.styleFrom(
-                      primary: ValStatics.colorPrimary,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                     ),
@@ -1638,9 +1631,7 @@ class _HomeState extends State<Home> with WidgetsBindingObserver {
                     ),
                     SizedBox(height: 10),
                     SizedBox(height: 10),
-                    Text(
-                        "${_traductionHome.translate("ganocon")} ${puzzleWinner.moves} ${_traductionHome.translate("movimientos")} ${_traductionHome.translate("en")} $seconds ${_traductionHome.translate("segundos")}",
-                        style: TextStyle(color: Colors.white)),
+                    Text("${_traductionHome.translate("ganocon")} ${puzzleWinner.moves} ${_traductionHome.translate("movimientos")} ${_traductionHome.translate("en")} $seconds ${_traductionHome.translate("segundos")}", style: TextStyle(color: Colors.white)),
                   ],
                 ),
               ),

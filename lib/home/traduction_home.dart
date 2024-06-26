@@ -11,7 +11,7 @@ class TraductionHome {
   late Map<String, dynamic> _localizedStrings = {};
 
   Future load() async {
-    String jsonString = await rootBundle.loadString('assets/locales/${localeName}.json');
+    String jsonString = await rootBundle.loadString('assets/locales/$localeName.json');
     _localizedStrings = jsonString.isNotEmpty ? jsonDecode(jsonString) : {};
   }
 

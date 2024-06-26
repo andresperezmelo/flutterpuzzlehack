@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:math';
-import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
@@ -35,7 +34,7 @@ class DownloadImagePuzzle extends BlocPuzzleBase {}
 class StopPuzzle extends BlocPuzzleBase {}
 
 class BlocPuzzle {
-  StreamController<BlocPuzzleBase> _input = StreamController();
+  final StreamController<BlocPuzzleBase> _input = StreamController();
   StreamSink<BlocPuzzleBase> get sentEvent => _input.sink;
 
   final StreamController<Puzzle> _puzzleController = StreamController<Puzzle>();
@@ -86,7 +85,7 @@ class BlocPuzzle {
     puzzle.level = level;
     puzzle.percentSolved = 0;
 
-    if (puzzle.image.length > 0) {
+    if (puzzle.image.isNotEmpty) {
       puzzle.listTilesBytes = await divideImage(imageBytes: puzzle.image, parts: puzzle.listTiles.length);
     }
 
