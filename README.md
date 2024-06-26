@@ -1,16 +1,16 @@
-# puzzleapp
+# flutterpuzzlehack
+Creating a puzzle for a flatter competition
 
-A new Flutter project.
+* Play online now [play](https://puzzleflutterapp.web.app/#/).
 
-## Getting Started
+###### Clone this repository and edit this game to your liking.
 
-This project is a starting point for a Flutter application.
+# Screenshot of the puzzle
+![Puzzle](https://github.com/andresperezmelo/flutterpuzzlehack/blob/main/Puzzle_home.png)
 
-A few resources to get you started if this is your first Flutter project:
+# Built with 🛠️
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+_Thanks to these tools this fabulous project has been created_
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* [Dart](https://dart.dev/) - language used
+* [Flutter](https://flutter.dev/) - framework used
